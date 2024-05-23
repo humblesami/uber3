@@ -40,4 +40,4 @@ const HomeNavigation = () => {
   );
 };
 
-export default HomeNavigation;
+export {HomeNavigation};

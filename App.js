@@ -4,7 +4,7 @@ import "intl/locale-data/jsonp/en";
 import React from "react";
 import { View, Text, KeyboardAvoidingView, Platform, AppRegistry } from "react-native";
 
-import HomeNavigation from "./components/HomeNavigation";
+import {HomeNavigation} from "./components/HomeNavigation";
 import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import { SafeAreaProvider } from "react-native-safe-area-context";
