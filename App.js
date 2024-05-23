@@ -1,16 +1,21 @@
 import "intl";
 import "intl/locale-data/jsonp/en";
 
-import { KeyboardAvoidingView, Platform } from "react-native";
+import React from "react";
+import { View, Text, KeyboardAvoidingView, Platform, AppRegistry } from "react-native";
 
 import HomeNavigation from "./components/HomeNavigation";
 import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
-import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { store } from "./app/store";
 
-export default function App() {
+export default function MainApp() {
+  // return(
+  //   <View style={{padding: 50}}>
+  //     <Text>GG Love</Text>
+  //   </View>
+  // );
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -27,3 +32,5 @@ export default function App() {
     </Provider>
   );
 }
+
+AppRegistry.registerComponent('main', () => MainApp);

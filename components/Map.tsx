@@ -7,7 +7,7 @@ import {
 } from "../app/slices/navigationSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import { GOOGLE_MAPS_API_KEY } from "@env";
+import { GOOGLE_MAPS_API_KEY } from "../env_keys";
 import MapViewDirections from "react-native-maps-directions";
 import tailwind from "tailwind-react-native-classnames";
 
@@ -29,14 +29,22 @@ const Map = () => {
     if (!origin || !destination) return;
 
     const getTravelTime = async () => {
-      const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_API_KEY}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      dispatch(setTravelTimeInfo(data.rows[0].elements[0]));
+      try{
+        const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_API_KEY}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        dispatch(setTravelTimeInfo(data.rows[0].elements[0]));
+      }
+      catch(err){
+        console.log('Error in distancematrix', err)
+      }
+      
     };
 
     getTravelTime();
   }, [origin, destination, GOOGLE_MAPS_API_KEY]);
+
+  console.log(43434, origin, destination);
 
   return (
     <MapView

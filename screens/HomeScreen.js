@@ -1,7 +1,7 @@
 import { Image, View } from "react-native";
 import { setDestination, setOrigin } from "../app/slices/navigationSlice";
 
-import { GOOGLE_MAPS_API_KEY } from "@env";
+import { GOOGLE_MAPS_API_KEY } from "../env_keys";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import NavFavorites from "../components/NavFavorites";
 import NavOptions from "../components/NavOptions";
@@ -22,7 +22,7 @@ const HomeScreen = () => {
             uri: "https://links.papareact.com/gzs",
           }}
         />
-        <GooglePlacesAutocomplete
+        {<GooglePlacesAutocomplete
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
           placeholder="Where from?"
@@ -47,7 +47,7 @@ const HomeScreen = () => {
               flex: 0,
             },
           }}
-        />
+        /> }
         <NavOptions />
         <NavFavorites shouldSetOrigin />
       </View>

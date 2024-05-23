@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import { GOOGLE_MAPS_API_KEY } from "@env";
+import { GOOGLE_MAPS_API_KEY } from "../env_keys";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { Icon } from "react-native-elements";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -21,7 +21,7 @@ const NavigateCard = () => {
     <SafeAreaView style={tailwind`bg-white flex-1 justify-between`}>
       <View style={tailwind`flex-shrink`}>
         <Text style={tailwind`text-center pb-5 text-lg`}>
-          Good morning, Papi
+          Good morning, Dear
         </Text>
         <View style={tailwind`border-t border-gray-200 `}>
           <GooglePlacesAutocomplete

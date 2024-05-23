@@ -87,15 +87,15 @@ const favoritesData: FavoritesData = [
     id: "234",
     icon: "home",
     name: "Home",
-    location: { lat: 5.4945, lng: -0.4118 },
-    description: "Jordan Gospel Centre, Land of Grace",
+    location: { lat:31.5564422, lng:74.4018394 },
+    description: "379-E Tajpura Scheme",
   },
   {
     id: "567",
     icon: "briefcase",
     name: "Work",
-    location: { lat: 5.5497, lng: -0.3522 },
-    description: "Finger Bites Kitchen, Mile 11",
+    location: { lat: 31.3997441, lng:74.227059},
+    description: "92newsHD Lahore",
   },
 ];
 
